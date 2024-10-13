@@ -51,5 +51,6 @@ RUN python3.8 -m venv /opt/venv \
 # Ensure the virtual environment is used by default
 ENV PATH="/opt/venv/bin:$PATH"
 
-# Entry point (Optional: for interactive shell)
-CMD ["/bin/bash
+# Entry point to automatically run miRge-build
+ENTRYPOINT ["/bin/bash", "-c", "source /opt/venv/bin/activate && miRge-build"]
+
